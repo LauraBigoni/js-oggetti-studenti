@@ -13,10 +13,11 @@ Consigli del giorno
 - Scriviamo sempre prima in italiano i passaggi che vogliamo fare
 - Scriviamo sempre solo un pezzetto di codice alla volta e verifichiamo (console.log), se funziona allora andiamo avanti.
 */
-// # Recupero elementi in pagina
+// # RECUPERO GLI ELEMENTI IN PAGINA
 const displayElement = document.getElementById("display").innerHTML = `<h3>Lista studenti:</h3><br>`;
 
-// # Creo un oggetto con proprietà
+
+// # CREO UN OGGETTO CON PROPRIETA'
 const studente = {
     nome: 'Laura',
     cognome: 'Bigoni',
@@ -25,9 +26,36 @@ const studente = {
 console.log(studente);
 console.table(studente);
 
-// # Stampo a schermo le proprietà
-for ( let key in studente) {
+
+// # STAMPO A SCHERMO LE PROPRIETA'
+for (let key in studente) {
     console.log(`${key}: ${studente[key]}`)
 }
 
-// # Creo un array di oggetti di studenti
+
+// # CREO UN ARRAY DI STUDENTI
+const classe = [
+    { nome: 'Salvatore', cognome: 'Pitanza', eta: 30 },
+    { nome: 'Matteo', cognome: 'Imbimbo', eta: 25 },
+    { nome: 'Linda', cognome: 'Bettini', eta: 22 },
+    { nome: 'Nicolas', cognome: 'Maranzano', eta: 26 },
+];
+classe.push(studente);
+console.table(classe);
+
+
+// # CICLO GLI STUDENTI E NE STAMPO LE PROPRIETA'
+for (let i = 0; i < classe.length; i++) {
+    const studente = classe[i];
+    console.log(studente.nome,studente.cognome);
+    }
+
+
+// # PROMPT PER AGGIUNGERE DATI ALL'ARRAY
+let nomeUtente = prompt('Inserisci un nome').trim();
+let cognomeUtente = prompt('inserisci un cognome').trim();
+let etaUtente = parseInt(prompt("Inserisci l'età"));
+
+const nuovaClasse = [];
+nuovaClasse.push(nomeUtente, cognomeUtente, etaUtente);
+console.log(nuovaClasse);
