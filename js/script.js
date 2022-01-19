@@ -13,11 +13,17 @@ Consigli del giorno
 - Scriviamo sempre prima in italiano i passaggi che vogliamo fare
 - Scriviamo sempre solo un pezzetto di codice alla volta e verifichiamo (console.log), se funziona allora andiamo avanti.
 */
+// # Recupero elementi in pagina
 
 // # Creo un oggetto con proprietà
 const studente = {
     nome: 'Laura',
-    cognome: 'Bigoni',
-    eta: 29,
+    cognome: ' Bigoni',
+    eta:  29,
 };
 console.log(studente);
+console.table(studente);
+
+// # Stampo a schermo le proprietà
+const myArray = Object.values(studente);
+document.getElementById("display").innerHTML = `<h3>Lista studenti:</h3><br> ${myArray}`;
