@@ -1,4 +1,4 @@
-Descrizione:
+console.log('JS OK!');
 /*
 TRACCIA:
 1. Creare un oggetto che descriva uno studente, con le seguenti proprietà: nome, cognome e età.
@@ -14,3 +14,10 @@ Consigli del giorno
 - Scriviamo sempre solo un pezzetto di codice alla volta e verifichiamo (console.log), se funziona allora andiamo avanti.
 */
 
+// # Creo un oggetto con proprietà
+const studente = {
+    nome: 'Laura',
+    cognome: 'Bigoni',
+    eta: 29,
+};
+console.log(studente);
