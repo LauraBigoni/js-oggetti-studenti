@@ -14,7 +14,11 @@ Consigli del giorno
 - Scriviamo sempre solo un pezzetto di codice alla volta e verifichiamo (console.log), se funziona allora andiamo avanti.
 */
 // # RECUPERO GLI ELEMENTI IN PAGINA
-const displayElement = document.getElementById("display").innerHTML = `<h3>Lista studenti:</h3><br>`;
+const displayElement = document.getElementById("display");
+
+
+// # CREO UNA NUOVA CLASSE DOVE INSERIRE TUTTI I DATI FINALI
+const nuovaClasse = [];
 
 
 // # CREO UN OGGETTO CON PROPRIETA'
@@ -47,8 +51,8 @@ console.table(classe);
 // # CICLO GLI STUDENTI E NE STAMPO LE PROPRIETA'
 for (let i = 0; i < classe.length; i++) {
     const studente = classe[i];
-    console.log(studente.nome,studente.cognome);
-    }
+    console.log(studente.nome, studente.cognome);
+}
 
 
 // # PROMPT PER AGGIUNGERE DATI ALL'ARRAY
@@ -56,6 +60,8 @@ let nomeUtente = prompt('Inserisci un nome').trim();
 let cognomeUtente = prompt('inserisci un cognome').trim();
 let etaUtente = parseInt(prompt("Inserisci l'età"));
 
-const nuovaClasse = [];
-nuovaClasse.push(nomeUtente, cognomeUtente, etaUtente);
+nuovaClasse.push(classe, nomeUtente, cognomeUtente, etaUtente);
 console.log(nuovaClasse);
+
+
+// # STAMPO IN PAGINA
