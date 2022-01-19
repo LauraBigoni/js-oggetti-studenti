@@ -14,16 +14,20 @@ Consigli del giorno
 - Scriviamo sempre solo un pezzetto di codice alla volta e verifichiamo (console.log), se funziona allora andiamo avanti.
 */
 // # Recupero elementi in pagina
+const displayElement = document.getElementById("display").innerHTML = `<h3>Lista studenti:</h3><br>`;
 
 // # Creo un oggetto con proprietà
 const studente = {
     nome: 'Laura',
-    cognome: ' Bigoni',
-    eta:  29,
+    cognome: 'Bigoni',
+    eta: 29,
 };
 console.log(studente);
 console.table(studente);
 
 // # Stampo a schermo le proprietà
-const myArray = Object.values(studente);
-document.getElementById("display").innerHTML = `<h3>Lista studenti:</h3><br> ${myArray}`;
+for ( let key in studente) {
+    console.log(`${key}: ${studente[key]}`)
+}
+
+// # Creo un array di oggetti di studenti
