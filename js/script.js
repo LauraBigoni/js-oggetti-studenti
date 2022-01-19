@@ -17,15 +17,9 @@ Consigli del giorno
 const displayElement = document.getElementById("display");
 
 
-// # CREO UNA NUOVA CLASSE DOVE INSERIRE TUTTI I DATI FINALI
-const nuovaClasse = [];
-
-
 // # CREO UN OGGETTO CON PROPRIETA'
 const studente = {
-    nome: 'Laura',
-    cognome: 'Bigoni',
-    eta: 29,
+    nome: 'Laura', cognome: 'Bigoni', eta: 29,
 };
 console.log(studente);
 console.table(studente);
@@ -48,6 +42,17 @@ classe.push(studente);
 console.table(classe);
 
 
+// # PROMPT PER AGGIUNGERE DATI ALL'ARRAY
+let nomeUtente = prompt('Inserisci un nome').trim();
+let cognomeUtente = prompt('inserisci un cognome').trim();
+let etaUtente = parseInt(prompt("Inserisci l'età"));
+
+nuovoStudente = nomeUtente + cognomeUtente + etaUtente;
+classe.push({ "nome": nomeUtente, "cognome": cognomeUtente, "eta": etaUtente });
+console.log(classe);
+console.table(classe);
+
+
 // # CICLO GLI STUDENTI E NE STAMPO LE PROPRIETA'
 for (let i = 0; i < classe.length; i++) {
     const studente = classe[i];
@@ -55,13 +60,5 @@ for (let i = 0; i < classe.length; i++) {
 }
 
 
-// # PROMPT PER AGGIUNGERE DATI ALL'ARRAY
-let nomeUtente = prompt('Inserisci un nome').trim();
-let cognomeUtente = prompt('inserisci un cognome').trim();
-let etaUtente = parseInt(prompt("Inserisci l'età"));
-
-nuovaClasse.push(classe, nomeUtente, cognomeUtente, etaUtente);
-console.log(nuovaClasse);
-
-
 // # STAMPO IN PAGINA
+const classList = document.getElementById('display');
