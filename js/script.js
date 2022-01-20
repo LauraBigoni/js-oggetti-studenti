@@ -14,7 +14,7 @@ Consigli del giorno
 - Scriviamo sempre solo un pezzetto di codice alla volta e verifichiamo (console.log), se funziona allora andiamo avanti.
 */
 // # RECUPERO GLI ELEMENTI IN PAGINA
-const displayElement = document.getElementById("display");
+const display = document.getElementById("display");
 
 
 // # CREO UN OGGETTO CON PROPRIETA'
@@ -26,9 +26,15 @@ console.table(studente);
 
 
 // # STAMPO A SCHERMO LE PROPRIETA'
+// for (let key in studente) {
+//     console.log(`${key}: ${studente[key]}`)
+// }
+let content = '';
 for (let key in studente) {
-    console.log(`${key}: ${studente[key]}`)
+    content +=`<div><strong>${key}</strong></div>${studente[key]}`
 }
+
+display.innerHTML = content;
 
 
 // # CREO UN ARRAY DI STUDENTI
@@ -61,4 +67,3 @@ for (let i = 0; i < classe.length; i++) {
 
 
 // # STAMPO IN PAGINA
-const classList = document.getElementById('display');
