@@ -52,8 +52,8 @@ let nomeUtente = prompt('Inserisci un nome').trim();
 let cognomeUtente = prompt('inserisci un cognome').trim();
 let etaUtente = parseInt(prompt("Inserisci l'età"));
 
-nuovoStudente = nomeUtente + cognomeUtente + etaUtente;
-classe.push({ "nome": nomeUtente, "cognome": cognomeUtente, "eta": etaUtente });
+const nuovoStudente = { "nome": nomeUtente, "cognome": cognomeUtente, "eta": etaUtente };
+classe.push(nuovoStudente);
 console.log(classe);
 console.table(classe);
 
@@ -65,7 +65,7 @@ const printObjectArray = (objectArray, targetElement) => {
         const currentObject = objectArray[i];
         content += '<ul>';
         for (let key in currentObject) {
-            content += `<li><strong>${key}:</strong>${currentObject[key]}</li>`;
+            content += `<li><strong>${key}: </strong>${currentObject[key]}</li>`;
         }
         content += '</ul>';
         content += '<hr>';
