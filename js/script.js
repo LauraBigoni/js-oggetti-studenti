@@ -18,23 +18,22 @@ const display = document.getElementById("display");
 
 
 // # CREO UN OGGETTO CON PROPRIETA'
-const studente = {
-    nome: 'Laura', cognome: 'Bigoni', eta: 29,
-};
-console.log(studente);
-console.table(studente);
+const studente1 = {
+    nome: 'Laura', cognome: 'Bigoni', eta: 29};
+console.log(studente1);
+console.table(studente1);
 
 
 // # STAMPO A SCHERMO LE PROPRIETA'
 // for (let key in studente) {
 //     console.log(`${key}: ${studente[key]}`)
 // }
-let content = '';
-for (let key in studente) {
-    content +=`<div><strong>${key}</strong></div>${studente[key]}`
-}
+// let content = '';
+// for (let key in studente) {
+//     content +=`<div><strong>${key}</strong></div>${studente[key]}`
+// }
 
-display.innerHTML = content;
+// display.innerHTML = content;
 
 
 // # CREO UN ARRAY DI STUDENTI
@@ -44,7 +43,7 @@ const classe = [
     { nome: 'Linda', cognome: 'Bettini', eta: 22 },
     { nome: 'Nicolas', cognome: 'Maranzano', eta: 26 },
 ];
-classe.push(studente);
+classe.push(studente1);
 console.table(classe);
 
 
@@ -60,10 +59,20 @@ console.table(classe);
 
 
 // # CICLO GLI STUDENTI E NE STAMPO LE PROPRIETA'
-for (let i = 0; i < classe.length; i++) {
-    const studente = classe[i];
-    console.log(studente.nome, studente.cognome);
-}
+const printObjectArray = (objectArray, targetElement) => {
+    let content = '';
+    for (let i = 0; i < objectArray.length; i++) {
+        const currentObject = objectArray[i];
+        content += '<ul>';
+        for (let key in currentObject) {
+            content += `<li><strong>${key}:</strong>${currentObject[key]}</li>`;
+        }
+        content += '</ul>';
+        content += '<hr>';
+    }
+    targetElement.innerHTML = content;
+};
 
 
 // # STAMPO IN PAGINA
+printObjectArray(classe,display);
